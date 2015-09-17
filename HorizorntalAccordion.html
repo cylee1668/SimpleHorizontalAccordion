@@ -4,27 +4,64 @@
 <meta charset="utf-8">
 <title>simpleHorizorntalAccordion</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    activeItem = $("#accordion li:first");
+	$(activeItem).addClass('active');
+	
+	$("#accordion li").hover(function(){
+		$(activeItem).animate({width: "50px"}, {duration:1000, queue:false});
+		$(this).animate({width: "450px"}, {duration:1000, queue:false});
+		activeItem = this;	
+	});
+	
+});
+
+
+</script>
+<style type="text/css">
+	#accordion {
+		/*most important  height:200px; overflow:hidden; */
+		list-style:none; margin: 30px 0; padding:0; height:200px; overflow:hidden; background:#7d8d96;
+	}
+
+	#accordion li{
+		/*most important*/
+		float:left; border-left: 0px; display:block; height:170px; width:50px; padding:15px 0; overflow: hidden; color: #fff; text-decoration: none; font-size:16px; line-height:1.5em; border-left:1px solid #fff;	
+	}
+	
+	#accordion li img {border: none; border-right:1px solid #fff; float:left; margin: -15 15px 0 0;}
+	
+	#accordion li.active {width:450px;}
+</style>
+
+
 </head>
 
 <body>
   <ul id="accordion">
   	<li>
-    	<img src="apple001.jpg"/>
+    	<img src="image/apple001.jpg"/>
+        <strong>This is the header</strong>
+        this is the sample text!!
+    </li>
+    <li style="background-image:url(image/apple002.jpg); color:#F00;">
+    	<!--<img src="image/apple002.jpg"/>-->
+        <strong>This is the header</strong>
+        this is the sample text!!
+        pic is background image not img
     </li>
     <li>
-    	<img src="apple002.jpg"/>
+    	<img src="image/apple003.jpg"/>
     </li>
     <li>
-    	<img src="apple003.jpg"/>
+    	<img src="image/apple004.jpg"/>
     </li>
     <li>
-    	<img src="apple004.jpg"/>
+    	<img src="image/apple005.jpg"/>
     </li>
     <li>
-    	<img src="apple005.jpg"/>
-    </li>
-    <li>
-    	<img src="apple006.jpg"/>
+    	<img src="image/apple006.jpg"/>
     </li>
   </ul>
 </body>
